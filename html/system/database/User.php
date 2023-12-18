@@ -11,10 +11,6 @@ class User
         $this->db = $db;
     }
 
-
-
-
-
     public function getData($table = 'users')
     {
         $result = $this->db->con->query("SELECT * FROM {$table} WHERE username  != 'admin'");
@@ -91,11 +87,7 @@ class User
             'acc_id' => "'{$accid}'",
         );
 
-        $result = $this->insertData($params);
-        // if ($result) {
-
-        //     //header("Location:" . './pages/users.php');
-        // }
+        $this->insertData($params);
     }
 
 
@@ -105,13 +97,10 @@ class User
             if ($params != null) {
 
                 $columns = implode(',', array_keys($params));
-                // print_r($columns);
                 $values = implode(',', array_values($params));
-                //   print_r($values);
 
                 $query_string = sprintf("INSERT INTO %s(%s) VALUES(%s)", $table, $columns, $values);
 
-                //    echo $query_string;
                 $result = $this->db->con->query($query_string);
                 return $result;
             }
@@ -122,21 +111,16 @@ class User
     public function login($username, $password)
     {
         if ($this->db->con != null) {
-            // $result = $this->db->con->query("SELECT * FROM users WHERE password = '{$password}' 
-            //                                     AND username = '{$username}' ");
-            // $row = mysqli_fetch_array($result);
-            // $numrow = mysqli_num_rows($result);
+
             $args = $this->get_pwd_from_info($username);
-            // print_r($args);
             $passwordfromdb = $args['password'];
 
-
             if (password_verify($password, $passwordfromdb)) {
-
                 $_SESSION['user'] = $username;
                 $_SESSION['id'] = $args['acc_id'];
                 $_SESSION['lvl'] = $args['userole'];
                 header("Location:" . './pages/dashboard.php');
+                exit();
             }
         }
     }

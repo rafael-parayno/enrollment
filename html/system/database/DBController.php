@@ -2,10 +2,9 @@
 
 class DBController
 {
-    protected $host = 'localhost';
-
+    protected $host = 'mysql-server';
     protected $user = 'root';
-    protected $password = '';
+    protected $password = 'secret';
     protected $database = 'academia';
 
     public $con = null;
@@ -15,7 +14,7 @@ class DBController
         $this->con = mysqli_connect($this->host, $this->user, $this->password, $this->database);
 
         if ($this->con->connect_error) {
-            echo 'Fail' . $this->con->connect_error;
+            echo 'Fail: ' . $this->con->connect_error;
         }
     }
 
@@ -26,9 +25,10 @@ class DBController
 
     protected function closeConnection()
     {
-        if ($this->con != NULL) {
+        if ($this->con != null) {
             $this->con->close();
             $this->con = null;
         }
     }
 }
+?>

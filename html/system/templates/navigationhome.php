@@ -1,6 +1,6 @@
 <nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md sticky-top">
     <div class="container-fluid">
-        <a href="#" class="navbar-brand"><img style="height: 90px;" src="./assets/img/academialogo.png" alt="logo" />Montessori Professional College</a>
+        <a href="#" class="navbar-brand"><img style="height: 90px;" src="./assets/img/academialogo.png" alt="logo" />Academia School</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
             <span class="navbar-toggler-icon"></span>
         </button>

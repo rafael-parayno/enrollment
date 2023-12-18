@@ -38,7 +38,7 @@
     </div>
 </footer>
 <div class="text-center bg-dark text-white py-2">
-    <p>&copy;Copyrights 2020, Created By Lovely Thesis Group</p>
+    <p>&copy;Copyrights 2020, Created By STI College Students</p>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -67,3 +67,7 @@
 </body>
 
 </html>
+
+<?php
+ob_end_flush();
+?>
