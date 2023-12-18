@@ -3,7 +3,6 @@ include('./templates/header.php');
 include('./templates/navigationhome.php');
 ?>
 
-
 <main>
 
     <section id="hero-section">

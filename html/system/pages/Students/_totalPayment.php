@@ -59,10 +59,6 @@ $accountList = $account->getStudAccount($sno);
                                             <td><?= $acc['semterm'] ?></td>
                                             <td><?= $acc['school_year'] ?></td>
 
-
-
-
-
                                         </tr>
                                     <?php }, $accountList) ?>
 

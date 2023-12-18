@@ -108,9 +108,6 @@ if (isset($_POST['ConfirmButtonDownPay'])) {
         ->setTotal($down)
         ->setDetails($details);
 
-
-
-
     $transaction = new Transaction();
     $transaction->setAmount($amount)
         ->setItemList($itemList)
@@ -129,14 +126,11 @@ if (isset($_POST['ConfirmButtonDownPay'])) {
         ->setRedirectUrls($redirectUrls)
         ->setTransactions(array($transaction));
 
-    // echo 'wew';
     $request = clone $payment;
 
     $payment->create($apiContext);
 
-
     $approvalUrl = $payment->getApprovalLink();
-    //return $payment;
     $link =  "<a class='btn btn-info btn-block' href='{$approvalUrl}'>Go to Paypal</a>";
 }
 

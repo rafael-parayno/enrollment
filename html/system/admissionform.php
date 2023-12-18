@@ -33,16 +33,7 @@ $sno = '2020-' . $lastid;
                     <input require type="text" name="LastName" class="form-control" id="LastName">
                 </div>
             </div>
-            <div class="form-group">
-                <label for="Course">Course</label>
-                <select name="Course" class="form-control" id="exampleFormControlSelect1">
 
-                    <?php array_map(function ($course) { ?>
-                        <option value="<?= $course['courses_id'] ?>"><?= $course['coursesName'] . '-' . $course['coursesCode'] ?></option>
-                    <?php }, $courses) ?>
-                </select>
-                <!-- <input require type="text" name="Course" class="form-control" id="Course" placeholder="Course"> -->
-            </div>
             <div class="form-row">
                 <div class="form-group col-md-3">
                     <label for="Dob">Date of Birth</label>
