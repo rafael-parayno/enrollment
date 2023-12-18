@@ -6,11 +6,10 @@ $semyr = $sem->getSemActivate();
 $isPaid = $account->checkStudPaid($sno, $yearSy['sy_id'], $semyr['semid']);
 ?>
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Montessori</a><button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href=""><i class="fas fa-bars"></i></button><!-- Navbar Search-->
+    <a class="navbar-brand" href="#">Academia</a><button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href=""><i class="fas fa-bars"></i></button><!-- Navbar Search-->
     <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
 
     </form>
-    <!-- Navbar-->
     <ul class="navbar-nav ml-auto ml-md-0">
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
@@ -46,46 +45,29 @@ $isPaid = $account->checkStudPaid($sno, $yearSy['sy_id'], $semyr['semid']);
                         </a>
                         <div class="collapse" id="collapseStudents" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="./students.php">
-                                    <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
-                                    College Students Enrolled
-                                </a>
                                 <a class="nav-link" href="./PendingStudents.php">
                                     <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
-                                    College Students Pending
+                                    New Students Pending
                                 </a>
                                 <a class="nav-link" href="./shsStudents.php">
                                     <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
-                                    SHS Student Enrolled
+                                    New Student Enrolled
                                 </a>
-                                <a class="nav-link" href="./shsStudentsPend.php">
-                                    <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
-                                    SHS Student Pending
-                                </a>
-
-
                                 <a class="nav-link" href="./StudentGrades.php">
                                     <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
                                     Student Grades
                                 </a>
+                                <!-- all students -->
+                                <a class="nav-link" href="#">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                                    All Students Enrolled
+                                </a>
                             </nav>
                         </div>
 
-                        <a class="nav-link" href="./course.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                            Courses
-                        </a>
-                        <a class="nav-link" href="./strands.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                            Strand
-                        </a>
                         <a class="nav-link" href="./subjects.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                             Subjects
-                        </a>
-                        <a class="nav-link" href="./Curriculum.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                            Curriculum
                         </a>
                         <a class="nav-link" href="./accounts.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
@@ -104,88 +86,75 @@ $isPaid = $account->checkStudPaid($sno, $yearSy['sy_id'], $semyr['semid']);
                             School Year
                         </a>
                         <a class="nav-link" href="./sem.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                            <!-- <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                             Semester
-                        </a>
-                        <a class="nav-link" href="./message.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                            Message
-                        </a>
-                    <?php
+                        </a> -->
+                            <a class="nav-link" href="./message.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Message
+                            </a>
+                        <?php
                     } else {
-                    ?>
-
-                        <?php
-                        $isShs = strpos($sno, 'shs') !== false ? 'shs' : 'college';
                         ?>
 
-                        <a class="nav-link" href="./message.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-envelope"></i></div>
-                            Message
-                        </a>
-                        <?php
-                        if ($isShs == 'college') {
-                        ?>
-                            <a class="nav-link" href="./StudentProfile.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
-                                profile
-                            </a>
-                            <a class="nav-link" href="./sectionoffering.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Section Offering
-                            </a>
-                            <a class="nav-link" href="./registration.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Registration
-                            </a>
-                            <a class="nav-link" href="./studentaccounts.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                My Accounts
-                            </a>
-                            <a class="nav-link" href="./StudentSubjects.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                My Subjects Enrolled
-                            </a>
+                            <?php
+                            $isShs = strpos($sno, 'shs') !== false ? 'shs' : 'college';
+                            ?>
 
-                            <a class="nav-link" href="./MyGrades.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                My Grades
+                            <a class="nav-link" href="./message.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-envelope"></i></div>
+                                Message
                             </a>
-
-                            <a class="nav-link" href="./MyCurriculum.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Course Curriculum
-                            </a>
-
-                            <?php if ($isPaid != 0) { ?>
-                                <a class="nav-link" href="./cor.php">
-                                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                    my Cor
+                            <?php
+                            if ($isShs == 'college') {
+                            ?>
+                                <a class="nav-link" href="./StudentProfile.php">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                                    profile
                                 </a>
-                            <?php } ?>
+                                <a class="nav-link" href="./sectionoffering.php">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                    Section Offering
+                                </a>
+                                <a class="nav-link" href="./registration.php">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                    Registration
+                                </a>
+                                <a class="nav-link" href="./studentaccounts.php">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                    My Accounts
+                                </a>
+                                <a class="nav-link" href="./StudentSubjects.php">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                    My Subjects Enrolled
+                                </a>
+                                <a class="nav-link" href="./MyGrades.php">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                    My Grades
+                                </a>
 
-                        <?php } else {
-                        ?>
-                            <a class="nav-link" href="./ShsProfile.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Profile
-                            </a>
+                                <?php if ($isPaid != 0) { ?>
+                                    <a class="nav-link" href="./cor.php">
+                                        <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                        my Cor
+                                    </a>
+                                <?php } ?>
 
-                            <!-- <a class="nav-link" href="./sectionoffering.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Sections Offering
-                            </a> -->
+                            <?php } else {
+                            ?>
+                                <a class="nav-link" href="./ShsProfile.php">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                    Profile
+                                </a>
 
-
-                    <?php
+                        <?php
+                            }
                         }
-                    }
-                    ?>
+                        ?>
                 </div>
             </div>
             <div class="sb-sidenav-footer">
                 <div class="small">Logged in as:</div>
-                //role
             </div>
         </nav>
     </div>

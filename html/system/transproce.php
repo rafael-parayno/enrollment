@@ -19,19 +19,12 @@ include('./templates/navigationhome.php');
         <div class="container py-4">
             <div class="py-2 text-center">
                 <h2>Tranferee/Other Branch PROCEDURES</h2>
-                <p>Transferees are students who have enrolled or taken college or vocational units in other colleges,
-                    universities or vocational schools. Even applicants who apply as freshmen will still
-                    be considered transferees for as long as they have officially
-                    enrolled in any degree or certificate program in any school after high school.</p>
-
+                <p class="card-text">Transferees are students who have change school.</p>
                 <hr />
                 <ol class=" text-justify">
                     <li class="mb-4"> &nbsp;Applicant transferees are required to submit the
                         following to requirements to the office after receiving an evaluation.
                         <ul>
-                            <li>Transcript of Record</li>
-                            <li>Note: with Remark</li>
-                            <li>Honorable Dismissal</li>
                             <li>Good Moral</li>
                             <li>NSO Birth Certificate-</li>
                         </ul>

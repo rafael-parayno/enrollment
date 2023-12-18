@@ -32,8 +32,7 @@ $fee = new Fee($db);
 $user = new User($db);
 
 
-$mail = new PHPMailer(); // create a new object
-// print_r($personalData->getData());
+$mail = new PHPMailer();
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     if (isset($_POST['addSubmit'])) {
@@ -99,7 +98,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             return  $accumulator + (float) $item['subject_units'];
         });
 
-        $totalTf = $totalUnits *   $tfPerUnit;
+        // $totalTf = $totalUnits *   $tfPerUnit;
+        $totalTf = 20_000;
+        //test
 
         $totalPayment = $totalTf + $misc;
 
@@ -119,15 +120,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
         $body =
             "<h2 style='text-align:center; padding: 0 200px;'>Hi, $firstname $lastname</h2>" .
-            "<p style='text-align:center; padding: 0 200px;'>Thank you for registering in our Montessori Enrollment. To complete your registration with us, 
+            "<p style='text-align:center; padding: 0 200px;'>Thank you for registering in our Academia Prime. To complete your registration with us, 
 please click the button below and confirm your e-mail address." .
             "<br><br>"
             . "<div style='text-align:center; padding: 0 200px;border:1px solid black;-webkit-box-shadow: -7px -3px 58px -16px rgba(0,0,0,0.73);
             -moz-box-shadow: -7px -3px 58px -16px rgba(0,0,0,0.73);
             box-shadow: -7px -3px 58px -16px rgba(0,0,0,0.73);border-radius: 10px 10px 10px 10px;'>"
-            . "<h4 style='font-size:24px'>  {$courseName}</h4>"
-            . "<h4 style='font-size:24px'> -- Subjects -- </h4>"
-            . "<p style='font-size:18'>" . $printSubj . "</p>" .
+            .
             "<p style='font-size:18'>" . "FULLPAYMENT
                                         TUITION FEE {$totalUnits} X {$tfPerUnit}  = {$totalTf}<br/>
                                         MISC                                 = {$misc}<br/>
@@ -143,7 +142,7 @@ please click the button below and confirm your e-mail address." .
                                         INSTALLMENT
                                         <br/>
                                         <br/>
-                                        TUITION FEE {$totalUnits} X {$tfPerUnit}  = {$totalTf}<br/>
+                                        TUITION FEE  {$totalTf}<br/>
                                         MISC                                 = {$misc}<br/>
                                         TOTAL                                = {$totalPayment}<br/>
                                         10%                                  = {$tenPercent}<br/>
@@ -168,15 +167,15 @@ please click the button below and confirm your e-mail address." .
             . "<br>"
             . "<div style='text-align:center'>"
             . "<small style='display: block'><bold>Questions? Contact Us!</bold></small>"
-            . "<small style='display: block'><a href='#'>marketing@montessori.com</a></small>";
+            . "<small style='display: block'><a href='#'>marketing@academia.com</a></small>";
 
 
-        $mail->IsSMTP(); // enable SMTP
-        $mail->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
-        $mail->SMTPAuth = true; // authentication enabled
-        $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
+        $mail->IsSMTP();
+        $mail->SMTPDebug = 1;
+        $mail->SMTPAuth = true;
+        $mail->SMTPSecure = 'ssl';
         $mail->Host = "smtp.gmail.com";
-        $mail->Port = 465; // or 587
+        $mail->Port = 465;
         $mail->IsHTML(true);
         $mail->Username = "SECRET";
         $mail->Password = "SECRET";

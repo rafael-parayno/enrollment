@@ -9,8 +9,6 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active"><a class="nav-link" href="./homepage.php">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="./admision.php">Admission</a></li>
-                <li class="nav-item"><a class="nav-link" href="./about.php">About us</a></li>
-
                 <li class="nav-item"><a class="nav-link" href="./login.php">Login</a></li>
             </ul>
         </div>

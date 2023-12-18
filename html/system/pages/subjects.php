@@ -20,7 +20,7 @@ if (isset($_POST['submitEditSub'])) {
 
     $subject->editSubjects($id, $name, $code, $yr, $units);
 
-    echo "<script>window.location='/academia/system/pages/subjects.php';</script>";
+    echo "<script>window.location='/academia3/system/pages/subjects.php';</script>";
 }
 
 
@@ -48,9 +48,9 @@ if (isset($_POST['submitEditSub'])) {
                                 <th>Id</th>
                                 <th>Subject Name</th>
                                 <th>Subject code</th>
-                                <th>Year</th>
-                                <th>Course</th>
-                                <th>Sem </th>
+                                <th>Grade</th>
+                                <!-- <th>Course</th> -->
+                                <!-- <th>Sem </th> -->
                                 <th>School Year</th>
                                 <th>Action</th>
 
@@ -62,8 +62,8 @@ if (isset($_POST['submitEditSub'])) {
                                 <th>Subject Name</th>
                                 <th>Subject code</th>
                                 <th>Year</th>
-                                <th>course</th>
-                                <th>Sem </th>
+                                <!-- <th>course</th> -->
+                                <!-- <th>Sem </th> -->
                                 <th>School Year</th>
                                 <th>Action</th>
                             </tr>
@@ -76,8 +76,8 @@ if (isset($_POST['submitEditSub'])) {
                                     <td><?= $subject['subjectname'] ?></td>
                                     <td><?= $subject['subjectcode'] ?></td>
                                     <td><?= $subject['subyr'] ?></td>
-                                    <td><?= $subject['coursesName'] ?></td>
-                                    <td><?= $subject['semterm'] ?></td>
+                                    <!-- <td><?= $subject['coursesName'] ?></td> -->
+                                    <!-- <td><?= $subject['semterm'] ?></td> -->
                                     <td><?= $subject['school_year'] ?></td>
 
 
@@ -120,35 +120,33 @@ if (isset($_POST['submitEditSub'])) {
                             <input id="subcode" type="text" name="subcode" />
                         </div>
                         <div class="form-group">
-                            <label for="subyr">Sub Year Level</label>
-                            <input id="subyr" type="number" min="1" max="4" name="subyr" />
+                            <label for="subyr">Grade Level</label>
+                            <input id="subyr" type="number" min="1" max="10" name="subyr" />
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label for="subunit">Subjects Units</label>
                             <input id="subunit" type="number" min="1" max="5" name="subunit" />
-                        </div>
-                        <div class="form-group">
+                        </div> -->
+                        <!-- <div class="form-group">
                             <label for="Course">Course</label>
                             <select name="Course" class="form-control" id="exampleFormControlSelect1">
 
                                 <?php array_map(function ($course) { ?>
                                     <option value="<?= $course['courses_id'] ?>"><?= $course['coursesName'] . '-' . $course['coursesCode'] ?></option>
                                 <?php }, $courseList) ?>
-                            </select>
-                            <!-- <input type="text" name="Course" class="form-control" id="Course" placeholder="Course"> -->
-                        </div>
-                        <div class="form-group">
+                            </select> -->
+                        <!-- <input type="text" name="Course" class="form-control" id="Course" placeholder="Course"> -->
+                        <!-- </div> -->
+                        <!-- <div class="form-group">
                             <label for="Semester">Semester</label>
                             <input id="Semester" value="<?= $semList['semterm'] ?>" type="text" name="Semester" disabled />
-                        </div>
+                        </div> -->
                         <div class="form-group">
                             <label for="schoolyear">School Year</label>
                             <input id="schoolyear" value="<?= $schoolYearArgs['school_year'] ?>" type="text" name="schoolyear" disabled />
                         </div>
                 </div>
                 <div class="modal-footer">
-                    <input type="hidden" value="<?= $semList['semid'] ?>" name="semid" />
-                    <input type="hidden" value="<?= $schoolYearArgs['sy_id'] ?>" name="syid" />
                     <button type="Submit" name="submitaddSub" class="btn btn-primary">Save</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
@@ -178,15 +176,6 @@ if (isset($_POST['submitEditSub'])) {
                             <label for="subcodeEdit">Subject Code</label>
                             <input id="subcodeEdit" type="text" name="subcodeEdit" />
                         </div>
-                        <div class="form-group">
-                            <label for="subyrEdit">Sub Year Level</label>
-                            <input id="subyrEdit" type="number" min="1" max="4" name="subyrEdit" />
-                        </div>
-                        <div class="form-group">
-                            <label for="subunitEdit">Subjects Units</label>
-                            <input id="subunitEdit" type="number" min="1" max="5" name="subunitEdit" />
-                        </div>
-
 
                 </div>
                 <div class="modal-footer">

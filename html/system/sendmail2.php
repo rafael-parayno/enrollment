@@ -84,13 +84,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
         $body =
             "<h2 style='text-align:center; padding: 0 200px;'>Hi, $firstname $lastname</h2>" .
-            "<p style='text-align:center; padding: 0 200px;'>Thank you for registering in our Montessori Enrollment. To complete your registration with us, 
+            "<p style='text-align:center; padding: 0 200px;'>Thank you for registering in our Academia Enrollment. To complete your registration with us, 
         please click the button below and confirm your e-mail address." .
             "<br><br>"
             . "<div style='text-align:center; padding: 0 200px;border:1px solid black;-webkit-box-shadow: -7px -3px 58px -16px rgba(0,0,0,0.73);
                     -moz-box-shadow: -7px -3px 58px -16px rgba(0,0,0,0.73);
                     box-shadow: -7px -3px 58px -16px rgba(0,0,0,0.73);border-radius: 10px 10px 10px 10px;'>" .
-            // . "<h4 style='font-size:24px'>  {$courseName}</h4>" .
             "<a style='background-color: #4CAAD8; border: none; color: white; padding: 15px 32px; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer;' href='localhost/academia/system/userconfirm.php?id={$sno}&email={$ead}'>Confirm E-mail Address</a></b></br></br>"
 
             . " </div>"

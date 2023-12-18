@@ -1,9 +1,10 @@
 version: "3.7"
 services:
   web-server:
+    container_name: web-server
     build:
-      dockerfile: php.Dockerfile
       context: .
+      dockerfile: php.Dockerfile
     restart: always
     volumes:
       - "./html/:/var/www/html/"
@@ -12,6 +13,7 @@ services:
     networks:
       - mynetwork
   mysql-server:
+    container_name: mysql-server
     image: mysql:8.0
     restart: always
     environment:
@@ -22,6 +24,7 @@ services:
       - mynetwork
 
   phpmyadmin:
+    container_name: phpmyadmin
     image: phpmyadmin/phpmyadmin:5.0.1
     restart: always
     environment:
@@ -36,4 +39,4 @@ services:
 networks:
   mynetwork:
 volumes:
-  mysql-data: 
+  mysql-data:

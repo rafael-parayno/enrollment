@@ -38,19 +38,34 @@ class ShsPersonal
         //   SELECT * FROM `shspersonal` WHERE sno NOT in (SELECT acc_id FROM users)
     }
 
-
     public function getDataWithSemSyid($semid, $syid)
     {
-        $result = $this->db->con->query("SELECT * FROM shspersonal WHERE semid = {$semid} AND syid = {$syid} AND isEnrolled = 1");
+        // Prepare the query
+        $stmt = $this->db->con->prepare("SELECT * FROM shspersonal WHERE semid = ? AND syid = ? AND isEnrolled = 1");
 
-        $resultArray = array();
+        if (!$stmt) {
+            error_log("Prepare failed: " . $this->db->con->error);
+            return [];
+        }
 
-        while ($item = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+        $stmt->bind_param("ii", $semid, $syid);
+
+        if (!$stmt->execute()) {
+            error_log("Execute failed: " . $stmt->error);
+            return [];
+        }
+
+        $result = $stmt->get_result();
+        $resultArray = [];
+        while ($item = $result->fetch_assoc()) {
             $resultArray[] = $item;
         }
 
+        $stmt->close();
+
         return $resultArray;
     }
+
 
     public function deleteData($condition, $key)
     {

@@ -13,15 +13,44 @@ class Fee
 
     public function getData($syid, $semid, $yrlvl)
     {
-        $result = $this->db->con->query("SELECT fee_id,tfPerUnits,misc,school_year,semterm 
-                                        FROM `fees` LEFT JOIN schoolyear ON fees.syid = schoolyear.sy_id 
-                                        LEFT JOIN sem ON fees.semid = sem.semid
-                                        WHERE fees.syid = {$syid} AND fees.semid = {$semid} AND fees.lvl = {$yrlvl}");
+        // Prepare the SQL query using placeholders
+        $stmt = $this->db->con->prepare("SELECT fee_id, tfPerUnits, misc, school_year, semterm 
+                                         FROM `fees` 
+                                         LEFT JOIN schoolyear ON fees.syid = schoolyear.sy_id 
+                                         LEFT JOIN sem ON fees.semid = sem.semid
+                                         WHERE fees.syid = ? AND fees.semid = ? AND fees.lvl = ?");
 
-        $items =  mysqli_fetch_array($result, MYSQLI_ASSOC);
+        if (!$stmt) {
+            // Handle prepare error, e.g., log it and return
+            error_log("Prepare failed: " . $this->db->con->error);
+            return null;
+        }
+
+        // Bind the parameters
+        $stmt->bind_param("iii", $syid, $semid, $yrlvl);
+
+        // Execute the query
+        if (!$stmt->execute()) {
+            // Handle execute error, e.g., log it and return
+            error_log("Execute failed: " . $stmt->error);
+            return null;
+        }
+
+        // Fetch the result
+        $result = $stmt->get_result();
+        if ($result) {
+            $items = $result->fetch_assoc();
+        } else {
+            // Handle case where there is no valid result set
+            $items = null;
+        }
+
+        // Close the statement
+        $stmt->close();
 
         return $items;
     }
+
 
     public function checkIfEmpty($syid, $semid, $lvl)
     {

@@ -10,7 +10,7 @@ include('./templates/navigationhome.php');
         <div class="container-fluid m-0 p-0">
             <div style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/img/slider2.jpg');" class="hero-image">
                 <div class="hero-text">
-                    <h4>Be an Academia Student</h4>
+                    <h4>Enroll now and start studying in Academia</h4>
                 </div>
             </div>
         </div>
@@ -23,34 +23,50 @@ include('./templates/navigationhome.php');
 
                 <h2>REQUIREMENTS NEEDED TO COMPLY</h2>
                 <div class="row">
-
-
                     <div class="col-md-6 border-top p-5">
-                        <h2>FOR REGULAR STUDENTS/ FRESHMAN</h2>
+                        <h2>FOR NEW STUDENTS</h2>
                         <p class="text-justify">
-                            1. Form 138 ( High School Card)<br />
-                            2. Form 137 ( Transcript of Records from High School)<br />
-                            3. Good moral<br />
-                            4. NSO Birth Certificate<br />
-                            5. Ojt Certificate- for graduating only<br />
-                            6. Ojt Evaluation- for graduating only<br />
+                            1. Form 137 ( Transcript of Records from High School)<br />
+                            2. Good moral<br />
+                            3. NSO Birth Certificate<br />
                         </p>
                     </div>
                     <div class="col-md-6 border-top p-5">
-                        <h2>FOR TRANSFEREE STUDENTS</h2>
+                        <h2>FOR TRANSFEREE STUDENT</h2>
                         <p class="text-justify">
-                            1.Transcript of Record<br />
-                            2. Honorable Dismissal<br />
-                            3. Good Moral<br />
-                            4. NSO Birth Certificate<br />
-                            5. Ojt Certificate – for graduating only<br />
-                            6. Ojt Evaluation- for graduating only<br />
+                            1. Honorable Dismissal<br />
+                            2. Good Moral<br />
+                            3. NSO Birth Certificate<br />
                         </p>
                     </div>
                 </div>
 
-                <h2>ADMISSION PROCEDURES</h2>
-                <p>Our objective is to give easy to understand teachings in order for the students to pass and never fail in every subject enrolled.</p>
+            </div>
+            <div class="row mx-2">
+                <div class="col-md-6 border-top pt-3">
+                    <div class="card">
+
+                        <div class="card-body">
+                            <h5 class="card-title text-warning">New Students</h5>
+                            <p class="card-text">New students are students who are not yet enrolled in any school.</p>
+                            <a href="./freshproce.php" class="btn btn-primary">View Procedures</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6 border-top pt-3">
+                    <div class="card">
+
+                        <div class="card-body">
+                            <h5 class="card-title text-warning">Transferee</h5>
+                            <p class="card-text">Transferees are students who have change school.</p>
+                            <a href="./transproce.php"" class=" btn btn-primary">View Procedures</a>
+                        </div>
+                    </div>
+
+                </div>
+
+
             </div>
         </div>
     </section>
